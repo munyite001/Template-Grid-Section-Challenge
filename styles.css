@@ -34,6 +34,7 @@
 body{
     font-size: var(--font-sm);
     padding: 1rem;
+    font-family: "Barlow Semi Condensed";
 }
 
 /*          > > > >    Mobile First Design     < < < <     */
