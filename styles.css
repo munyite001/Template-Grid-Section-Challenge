@@ -1,0 +1,182 @@
+/*  DECLARING OUR VARIABLES */
+
+:root
+{
+    /*  Primary Colors  */
+     --violet: hsl(263, 55%, 52%);
+     --violet-light: hsl(263, 80%, 70%);
+     --dark-grayish-blue: hsl(217, 19%, 35%);
+     --dark-blackish-blue: hsl(219, 29%, 14%);
+     --white: hsl(0, 0%, 100%);
+
+     /* Neutral */
+     --light-gray: hsl(0, 0%, 81%);
+     --light-grayish-blue: hsl(210, 46%, 95%);
+    /*
+        NB:
+         1. "Verified Graduate" has same color as the person's name with 50% opacity
+         2. Review paragraphs inside the quotations have the same color as well, 
+         but are at 70% opacity
+    */
+
+    /*  Font Size   */
+    --font-sm:13px;
+    --font-md:16px;
+
+    /*  Font Weight */
+    --font-500: 500;
+    --font-600: 600;
+
+}
+
+/*  Global */
+
+body{
+    font-size: var(--font-sm);
+    padding: 1rem;
+}
+
+/*          > > > >    Mobile First Design     < < < <     */
+
+/*  Style for the background // testimonial grid   */
+.testimonial-grid{
+    display: grid;
+    gap: 1rem;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 
+    'card1'
+    'card2'
+    'card3'
+    'card4'
+    'card5';
+    background-color: var(--light-grayish-blue);
+    padding: 2rem;
+}
+
+
+/*  Style for the general card components   */
+.testimonial-card{
+    color: var(--white);
+    border-radius: .2rem;
+}
+
+/*  Individual styling for each card using the nth child selector (background-color and grid areas for positioing)*/
+.testimonial-card:nth-child(1){
+    background-color: var(--violet);
+    grid-area: card1;
+}
+
+.testimonial-card:nth-child(2){
+    background-color: var(--dark-grayish-blue);
+    grid-area: card2;
+}
+.testimonial-card:nth-child(3){
+    background-color: var(--white);
+    color: var(--dark-grayish-blue);
+    grid-area: card3;
+}
+.testimonial-card:nth-child(4){
+    background-color: var(--dark-blackish-blue);
+    grid-area: card4;
+}
+.testimonial-card:nth-child(5){
+    background-color: var(--white);
+    color: var(--dark-grayish-blue);
+    grid-area: card5;
+}
+
+/* Border colors for the user image in each card */
+
+.testimonial-card:nth-child(1) * .image{
+    border: solid .2rem var(--violet-light);
+}
+.testimonial-card:nth-child(2) * .image{
+    border: solid .2rem var(--light-grayish-blue);
+}
+.testimonial-card:nth-child(3) * .image{
+    border: solid .2rem var(--dark-grayish-blue);
+}
+.testimonial-card:nth-child(4) * .image{
+    border: solid .2rem var(--violet);
+}
+.testimonial-card:nth-child(5) * .image{
+    border: solid .2rem var(--dark-grayish-blue);
+}
+/* Styling for the div with quotes i.e Daniel's card */
+.withquote{
+    display: flex;
+    width: 90%;
+    margin-right: 1rem;
+}
+
+.quotes{
+    margin-left: auto;
+}
+
+
+/*  Positioning the headings */
+.heading{
+    margin-top: 0px;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+/*  User details */
+
+/*  Rounding the user images of all card components */
+.image{
+    border-radius: 50%;
+}
+
+/*  Positioning the image and the user's details side by side using flexbox*/
+.user-info{
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+.user-info-text{
+    font-size: var(--font-md);
+    margin-left: 1rem;
+}
+
+.user-info-text > .name{
+    font-weight: var(--font-600);
+    margin-bottom: .2rem;
+}
+
+.user-info-text > .role{
+    font-weight: var(--font-600);
+    opacity: 50%;
+    margin-top: .2rem;
+}
+
+.review{
+    opacity: 70%;
+    font-size: var(--font-md);
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+/*          > > > >    Desktop Design     < < < <     */
+
+@media (min-width:550px){
+    .testimonial-grid{
+        grid-template-areas:
+        "card1 card1 card2 card5"
+        "card3 card4 card4 card5";
+    }
+    
+}
+
+
+
+/*  Styling for the Attribution */
+.attribution{
+    font-size: 16px;
+    margin-top: 1rem;
+}
+
