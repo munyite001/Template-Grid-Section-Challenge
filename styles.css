@@ -59,6 +59,7 @@ body{
 .testimonial-card{
     color: var(--white);
     border-radius: .2rem;
+    min-width: 350px;
 }
 
 /*  Individual styling for each card using the nth child selector (background-color and grid areas for positioing)*/
